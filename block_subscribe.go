@@ -4,13 +4,16 @@ import (
     "context"
     "fmt"
     "log"
-
+    "flag"
     "github.com/ethereum/go-ethereum/core/types"
     "github.com/ethereum/go-ethereum/ethclient"
 )
 
 func main() {
-    client, err := ethclient.Dial("http://52.44.214.192:22000")
+    var strFlag = flag.String("long-string", "", "URL")
+    flag.StringVar(strFlag, "url", "", "URL")
+    flag.Parse()
+    client, err := ethclient.Dial(*strFlag)
     if err != nil {
         log.Fatal(err)
     }
