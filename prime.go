@@ -2,7 +2,9 @@ package main
 import (  
  "fmt"  
 )  
-  
+ 
+//FUNCTION TO CHECK PRIME
+ 
 func CheckPrime(number int) {  
  isPrime := true  
  if number == 0 || number == 1 {  
